@@ -1,0 +1,83 @@
+<toast-app
+  *ngIf="showToast"
+  text="{{ TEXTS.ADDED_CAT }}"
+  (closeToast)="showToast = false"
+></toast-app>
+<div class="breed-overview-container">
+  <h1 class="header">{{ TEXTS.SEARCH_BY_BREED }}</h1>
+  <div class="search-container">
+    <input
+      type="text"
+      class="search-bar"
+      name="catBreed"
+      (keyup.enter)="(search)"
+      [(ngModel)]="catBreed"
+      placeholder="For example Cheetoh"
+    />
+    <button-app
+      (click)="search()"
+      class="button button--primaryGreen"
+      title="{{ TEXTS.SEARCH_BY_BREED }}"
+    ></button-app>
+  </div>
+  <div *ngIf="showError">
+    <h1 class="header">{{ TEXTS.ALREADY_ADDED }}</h1>
+  </div>
+  <div class="results-container">
+    <div *ngIf="showNoResults">
+      <h1 class="header">{{ TEXTS.NO_RESULTS_FOUND }}</h1>
+    </div>
+    <div *ngFor="let breed of catBreedList">
+      <div class="title-container">
+        <h1 class="description">{{ breed.name }}</h1>
+      </div>
+      <div class="content-container">
+        <cat-image-app
+          [src]="breed.image_url"
+          [alt]="breed.name"
+        ></cat-image-app>
+        <div class="details-container">
+          <div>
+            <p class="description">
+              <b
+                ><span class="isGreen">{{ TEXTS.DESCRIPTION }}</span></b
+              >
+              {{ breed.description }}
+            </p>
+            <p class="description">
+              <b
+                ><span class="isGreen">{{ TEXTS.ORIGIN }}</span></b
+              >
+              {{ breed.origin }}
+            </p>
+            <p class="description">
+              <b
+                ><span class="isGreen">{{ TEXTS.LIFESPAN }}</span></b
+              >
+              {{ breed.life_span }}
+            </p>
+            <p class="description">
+              <b
+                ><span class="isGreen">{{ TEXTS.TEMPERAMENT }}</span></b
+              >
+              {{ breed.temperament }}
+            </p>
+            <p class="description">
+              Read more on
+              <b>
+                <a class="isGreen" [href]="breed.wikipedia_url" target="_blank"
+                  >Wikipedia</a
+                ></b
+              >
+            </p>
+          </div>
+          <button-app
+            (click)="postFavorite(breed.reference_image_id)"
+            class="button button--primaryWhite"
+            title="{{ TEXTS.FAVORITE }}"
+          ></button-app>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

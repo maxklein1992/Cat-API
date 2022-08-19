@@ -1,0 +1,33 @@
+@import "../../../styles/pxToRem";
+@import "../../../styles/variables";
+
+.random-cat-container {
+  display: flex;
+  height: 100% !important;
+  width: 100% !important;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: $fontFamilyBody;
+}
+
+.image-container {
+  position: relative;
+  margin-top: pxToRem(64);
+}
+
+.header {
+  color: $colorPrimaryWhite;
+}
+
+.loading-text {
+  margin-top: pxToRem(112);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: pxToRem(32);
+  width: 100%;
+}

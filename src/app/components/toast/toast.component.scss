@@ -1,0 +1,18 @@
+@import "../../../styles/pxToRem";
+@import "../../../styles/variables";
+
+.toast {
+  position: fixed;
+  top: pxToRem(64);
+  right: pxToRem(64);
+  font-size: pxToRem(18);
+  color: $colorPrimaryWhite;
+  font-family: $fontFamilyBody;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding: 0 pxToRem(12);
+  border-radius: pxToRem(8);
+  z-index: 200;
+  background-color: $colorPrimaryGreen;
+}

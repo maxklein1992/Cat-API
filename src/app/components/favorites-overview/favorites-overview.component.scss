@@ -1,0 +1,48 @@
+@import "../../../styles/mediaQuery";
+@import "../../../styles/pxToRem";
+@import "../../../styles/variables";
+
+.breed-overview-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: $fontFamilyBody;
+}
+
+.isWhite {
+  color: $colorPrimaryWhite;
+  font-family: $fontFamilyBody;
+}
+
+.grid {
+  display: grid;
+  padding: 0;
+  grid-template-columns: repeat(12, 1fr);
+  gap: pxToRem(16) pxToRem(16);
+
+  @include mediaQuery(s, up) {
+    gap: pxToRem(24) pxToRem(24);
+  }
+
+  @include mediaQuery(l, up) {
+    gap: pxToRem(32) pxToRem(32);
+  }
+}
+
+.column {
+  @include mediaQuery(xs, up) {
+    grid-column: auto / span 12;
+  }
+
+  @include mediaQuery(s, up) {
+    grid-column: auto / span 6 !important;
+  }
+
+  @include mediaQuery(m, up) {
+    grid-column: auto / span 4 !important;
+  }
+}
+
+.button-container {
+  margin-top: pxToRem(16);
+}

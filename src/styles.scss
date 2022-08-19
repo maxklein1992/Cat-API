@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import "styles/variables";
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: $colorPrimaryBlack;
+  box-sizing: border-box;
+}

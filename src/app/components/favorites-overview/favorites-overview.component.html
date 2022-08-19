@@ -1,0 +1,24 @@
+<toast-app
+  *ngIf="showToast"
+  text="{{ TEXTS.DELETED_CAT }}"
+  (closeToast)="showToast = false"
+></toast-app>
+<div class="breed-overview-container">
+  <h1 class="isWhite">Favorites</h1>
+  <div class="grid">
+    <div *ngFor="let favorite of favoriteList" class="column">
+      <cat-image-app
+        [src]="favorite.image.url"
+        [alt]="favorite.id"
+      ></cat-image-app>
+      <div class="button-container">
+        <button-app
+          (click)="deleteFavorite(favorite.id)"
+          class="button button--primaryGreen"
+          title="Delete"
+        ></button-app>
+      </div>
+    </div>
+  </div>
+  <h3 class="isWhite" *ngIf="favoriteList?.length == 0">No favorites</h3>
+</div>

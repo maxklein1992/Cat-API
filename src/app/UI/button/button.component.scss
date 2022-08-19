@@ -1,0 +1,41 @@
+@import "../../../styles/mediaQuery";
+@import "../../../styles/pxToRem";
+@import "../../../styles/variables";
+
+.button {
+  display: flex;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  color: $colorPrimaryWhite;
+  padding: pxToRem(10) pxToRem(12);
+  text-align: center;
+  text-decoration: none;
+  font-size: pxToRem(14);
+  font-weight: bold;
+  border-radius: pxToRem(4);
+  cursor: pointer;
+  font-family: $fontFamilyBody;
+
+  @include mediaQuery(s, up) {
+    padding: pxToRem(16) pxToRem(26);
+    font-size: pxToRem(18);
+    border-radius: pxToRem(8);
+  }
+
+  &--primaryGreen {
+    background-color: $colorPrimaryGreen;
+  }
+
+  &--primaryWhite {
+    color: $colorPrimaryWhite;
+    background-color: transparent;
+    border-bottom: pxToRem(3) solid transparent;
+    border-radius: 0;
+    padding: pxToRem(6) 0;
+
+    &:hover {
+      border-bottom-color: $colorPrimaryWhite;
+    }
+  }
+}

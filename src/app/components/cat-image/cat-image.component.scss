@@ -1,0 +1,21 @@
+@import "../../../styles/mediaQuery";
+@import "../../../styles/pxToRem";
+@import "../../../styles/variables";
+
+.image {
+  border-top: pxToRem(8) solid $colorPrimaryGreen;
+  width: pxToRem(220);
+  height: auto;
+  border-bottom-left-radius: pxToRem(4);
+  border-bottom-right-radius: pxToRem(4);
+
+  @include mediaQuery(s, up) {
+    width: pxToRem(300);
+  }
+
+  @include mediaQuery(m, up) {
+    width: pxToRem(260);
+    border-bottom-left-radius: pxToRem(8);
+    border-bottom-right-radius: pxToRem(8);
+  }
+}
