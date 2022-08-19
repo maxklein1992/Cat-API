@@ -15,7 +15,7 @@ import { DeleteFavorite } from './services/deleteFavorite.service';
 import { FavoritesOverviewComponent } from './components/favorites-overview/favorites-overview.component';
 import { GetBreedNames } from './services/getBreedNames.service';
 import { GetFavorites } from './services/getFavorites.service';
-import { NavbarComponent } from './UI/navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { PostFavorite } from './services/postFavorite.service';
 import { RandomCatComponent } from './components/random-cat/random-cat.component';
 import { SearchBreedByName } from './services/searchBreedByName.service';
