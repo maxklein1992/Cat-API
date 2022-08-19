@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import type { Breed } from '../models/breed';
 
 @Injectable()
 export class DeleteFavorite {
@@ -22,7 +23,7 @@ export class DeleteFavorite {
    * Delete favorite breed
    */
   deleteFavorite(favoriteId: number): Observable<any> {
-    return this.http.delete(
+    return this.http.delete<Breed>(
       `https://api.thecatapi.com/v1/favourites/${favoriteId}?sub_id=${this.sub_id}`,
       this.options
     );

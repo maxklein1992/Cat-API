@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import type { Breed } from '../models/breed';
 
 @Injectable()
-export class GetFavorites {
+export class GetBreedNames {
+  LIMIT = 10;
+
   constructor(private http: HttpClient) {}
 
   headers = new HttpHeaders({
@@ -15,11 +17,11 @@ export class GetFavorites {
   options = { headers: this.headers };
 
   /**
-   * Retrieve all favorite breeds
+   * Retrieve limited breed names (to not spam the API)
    */
-  getFavorites(): Observable<any> {
+  getBreedNames(): Observable<any[]> {
     return this.http.get<Breed[]>(
-      `https://api.thecatapi.com/v1/favourites`,
+      `https://api.thecatapi.com/v1/breeds?limit=${this.LIMIT}&page=0`,
       this.options
     );
   }

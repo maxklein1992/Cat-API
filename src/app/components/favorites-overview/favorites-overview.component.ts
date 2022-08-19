@@ -11,6 +11,7 @@ import { GetFavorites } from 'src/app/services/getFavorites.service';
 export class FavoritesOverviewComponent {
   favoriteList: any = [];
   showToast: boolean;
+  favoriteItems: any;
 
   constructor(
     private getFavoritesService: GetFavorites,

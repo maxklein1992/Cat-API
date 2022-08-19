@@ -1,1 +1,8 @@
-<button (click)="(clicked)" class="{{ class }}">{{ title }}</button>
+<button
+  (click)="(clicked)"
+  class="{{ class }}"
+  [disabled]="disabled"
+  tabIndex="1"
+>
+  {{ title }}
+</button>

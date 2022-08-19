@@ -3,6 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { PostFavorite } from 'src/app/services/postFavorite.service';
 import { SearchBreedByName } from '../../services/searchBreedByName.service';
 import type { Breed } from 'src/app/models/breed';
+import { GetBreedNames } from 'src/app/services/getBreedNames.service';
 
 @Component({
   selector: 'breed-overview-app',
@@ -11,9 +12,12 @@ import type { Breed } from 'src/app/models/breed';
   encapsulation: ViewEncapsulation.None,
 })
 export class BreedOverviewComponent {
-  catBreed = '';
-  catBreedList: any;
+  catBreedName: Breed['name'];
+  catBreedList: Breed[];
+  catBreedNames: any;
   showNoResults: boolean;
+  showBreeds: boolean;
+  showBreedNames: boolean;
   showToast: boolean;
   showError: boolean;
   toastMessage: string;
@@ -25,10 +29,13 @@ export class BreedOverviewComponent {
   TEXTS = { ...BREED_OVERVIEW };
 
   constructor(
+    private getBreedNamesService: GetBreedNames,
     private searchBreedService: SearchBreedByName,
     private postFavoriteService: PostFavorite
   ) {
     this.showNoResults = false;
+    this.showBreeds = false;
+    this.showBreedNames = false;
     this.showToast = false;
     this.showError = false;
     this.userId = 'userDummy';
@@ -36,24 +43,40 @@ export class BreedOverviewComponent {
 
   postFavorite(imageId: string) {
     this.postFavoriteService.postFavorite(imageId).subscribe(
-      (res: any) => {
+      () => {
         this.showToast = true;
       },
       () => (this.showError = true)
     );
   }
 
-  search() {
+  getBreedNames() {
+    this.getBreedNamesService
+      .getBreedNames()
+      .subscribe((breedNames: Breed[]) => {
+        this.showError = false;
+        this.showNoResults = false;
+        this.showBreeds = false;
+        this.showBreedNames = true;
+        this.catBreedNames = breedNames;
+      });
+  }
+
+  searchBreed() {
     this.catBreedList = [];
     this.searchBreedService
-      .searchBreedByName(this.catBreed)
-      .subscribe((res: any) => {
+      .searchBreedByName(this.catBreedName)
+      .subscribe((res: Breed[]) => {
         if (res.length > 0) {
           this.showError = false;
           this.showNoResults = false;
+          this.showBreedNames = false;
+          this.showBreeds = true;
           this.pushResultsToList(res);
         } else {
           this.showError = false;
+          this.showBreeds = false;
+          this.showBreedNames = false;
           this.showNoResults = true;
         }
       });

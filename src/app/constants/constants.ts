@@ -16,6 +16,7 @@ export const BREED_OVERVIEW = {
   ORIGIN: 'Origin:',
   SEARCH_BY_BREED: 'Search by Breed',
   TEMPERAMENT: 'Temperament:',
+  SHOW_BREEDNAMES: 'Show examples of breed names',
 };
 
 export const RANDOM_CAT = {

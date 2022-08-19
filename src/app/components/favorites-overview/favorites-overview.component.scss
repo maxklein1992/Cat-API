@@ -30,9 +30,7 @@
 }
 
 .column {
-  @include mediaQuery(xs, up) {
-    grid-column: auto / span 12;
-  }
+  grid-column: auto / span 12;
 
   @include mediaQuery(s, up) {
     grid-column: auto / span 6 !important;
