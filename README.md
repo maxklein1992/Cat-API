@@ -2,9 +2,7 @@
 
 This app makes use of the [Cat API](https://thecatapi.com/). This is a web api with a database that you can freely use with information about cat breeds and access to thousands of cat images. The API can also be used to upload new images, tag your favorites and much more functionalities. The [documentation](https://docs.thecatapi.com/) of the Cat API is also available on the internet.
 
-# The Basics
 ## The Basics
-### The Basics
 
 You can use the API without code by pasting the following URL in your address bar.
 
@@ -33,15 +31,13 @@ https://api.thecatapi.com/v1/images/search?breed_ids=rblu
 
 - Install [Node.js] which includes [Node Package Manager][npm]
 
-### Setting Up a Project
-
 Install the Angular CLI globally:
 
 ```
 npm install -g @angular/cli
 ```
 
-# Installing
+### Install project dependencies
 
 You can install the projects dependencies by running
 
@@ -49,8 +45,15 @@ You can install the projects dependencies by running
 $ npm install
 ````
 
+### Development server
 
-# Stack
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+### Running unit tests
+
+Run `ng test` to execute the unit tests.
+
+## Stack
 
 The stacks of this app are as follows:
 
@@ -59,33 +62,8 @@ The stacks of this app are as follows:
 - **Jest** - Javascript testing framework
 - **React Testing Library** - React DOM testing utilities that encourage good testing practices.
 
-# Any Questions:
+## Any Questions:
 - **Email**: mcklein1992@gmail.com
 
 
 
-
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
