@@ -15,7 +15,11 @@ The Cat API returns a JSON string with the information of one random entry in th
 ````
 [{"id":"Y987fJ8ZD","url":"https://cdn2.thecatapi.com/images/Y987fJ8ZD.jpg","width":474,"height":632}]
 ````
-In order to view the image, you need to copy the URL part of the string and paste it in your address bar. 
+In order to view the image, you need to copy the URL part of the string and paste it in your address bar. You can also make your request more specific by putting a ? to the end of URL with one or more parameters. For example to return a Russian Blue (rblu) cat:
+
+````
+https://api.thecatapi.com/v1/images/search?breed_ids=rblu
+````
 
 
 ## Stack
