@@ -29,7 +29,7 @@ https://api.thecatapi.com/v1/images/search?breed_ids=rblu
 
 ### Prerequisites
 
-- Install [Node.js] which includes [Node Package Manager][npm]
+- Install [Node.js](https://nodejs.org/en/) which includes [Node Package Manager][npm](https://www.npmjs.com/get-npm)
 
 Install the Angular CLI globally:
 
