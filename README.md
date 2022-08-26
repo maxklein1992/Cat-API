@@ -25,6 +25,13 @@ You can also make your request more specific by putting a ? to the end of URL wi
 https://api.thecatapi.com/v1/images/search?breed_ids=rblu
 ````
 
+## This project
+
+In this project we use the CAT Api in multiple ways:
+- You can get a random image of a cat. 
+- You can search on bread names and get access to much information about that breed. 
+- And you can make breeds your favorite and remove a breed from your favorite list. 
+
 ## Development Setup
 
 ### Prerequisites
