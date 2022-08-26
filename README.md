@@ -1,6 +1,22 @@
 # CatApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+This app makes use of the [Cat API](https://thecatapi.com/). This is a web api with a database that you can freely use with information about cat breeds and access to thousands of cat images. The API can also be used to upload new images, tag your favorites and much more functionalities.
+
+# The Basics
+
+You can use the API without code by pasting the following URL in your address bar.
+
+````
+https://api.thecatapi.com/v1/images/search
+````
+
+The Cat API returns a JSON string with the information of one random entry in their cat image database. For example the JSON string can be:
+
+````
+[{"id":"Y987fJ8ZD","url":"https://cdn2.thecatapi.com/images/Y987fJ8ZD.jpg","width":474,"height":632}]
+````
+In order to view the image, you need to copy the URL part of the string and paste it in your address bar. 
+
 
 ## Stack
 
