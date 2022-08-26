@@ -41,7 +41,7 @@ In this project we use the Cat Api in multiple ways:
 - Install the Angular CLI globally:
 
 ```
-npm install -g @angular/cli
+$ npm install -g @angular/cli
 ```
 
 ### Clone the project
@@ -49,7 +49,7 @@ npm install -g @angular/cli
 Open a terminal and run the following git command:
 
 ```
-git clone https://github.com/maxklein1992/Cat-API.git
+$ git clone https://github.com/maxklein1992/Cat-API.git
 ```
 
 ### Install project dependencies
