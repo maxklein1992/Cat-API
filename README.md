@@ -44,9 +44,17 @@ In this project we use the Cat Api in multiple ways:
 npm install -g @angular/cli
 ```
 
+### Clone the project
+
+Open a terminal and run the following git command:
+
+```
+git clone https://github.com/maxklein1992/Cat-API.git
+```
+
 ### Install project dependencies
 
-You can install the projects dependencies by running
+Install the projects dependencies by running in the root of the project
 
 ````
 $ npm install
