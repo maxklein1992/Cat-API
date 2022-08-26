@@ -24,7 +24,7 @@ https://api.thecatapi.com/v1/images/search?breed_ids=rblu
 ````
 
 # Any Questions:
-- **Email** - mcklein1992@gmail.com
+- **Email**: mcklein1992@gmail.com
 
 ## Stack
 
