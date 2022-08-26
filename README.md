@@ -1,8 +1,10 @@
-# CatApp
+<h1 align="center">Cat API</h1>
 
 This app makes use of the [Cat API](https://thecatapi.com/). This is a web api with a database that you can freely use with information about cat breeds and access to thousands of cat images. The API can also be used to upload new images, tag your favorites and much more functionalities. The [documentation](https://docs.thecatapi.com/) of the Cat API is also available on the internet.
 
 # The Basics
+## The Basics
+### The Basics
 
 You can use the API without code by pasting the following URL in your address bar.
 
@@ -24,6 +26,29 @@ You can also make your request more specific by putting a ? to the end of URL wi
 ````
 https://api.thecatapi.com/v1/images/search?breed_ids=rblu
 ````
+
+## Development Setup
+
+### Prerequisites
+
+- Install [Node.js] which includes [Node Package Manager][npm]
+
+### Setting Up a Project
+
+Install the Angular CLI globally:
+
+```
+npm install -g @angular/cli
+```
+
+# Installing
+
+You can install the projects dependencies by running
+
+````
+$ npm install
+````
+
 
 # Stack
 
