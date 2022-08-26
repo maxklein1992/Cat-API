@@ -19,7 +19,7 @@ In order to view the image, you need to copy the URL part of the string and past
 
 ![image](https://user-images.githubusercontent.com/19752148/186999757-ed258842-f8ed-46a5-9e21-1018c1a71367.png)
 
-You can also make your request more specific by putting a ? to the end of URL with one or more parameters. For example to return a Russian Blue (rblu) cat:
+You can also make your request more specific by putting a `?` to the end of URL with one or more parameters. For example to return a Russian Blue (rblu) cat:
 
 ````
 https://api.thecatapi.com/v1/images/search?breed_ids=rblu
