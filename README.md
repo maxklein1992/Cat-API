@@ -4,7 +4,7 @@ This app makes use of the [Cat API](https://thecatapi.com/). This is a web api w
 
 ## The Basics
 
-You can use the API without code by pasting the following URL in your address bar.
+You can use the API without using any code by pasting the following URL in your address bar.
 
 ````
 https://api.thecatapi.com/v1/images/search
