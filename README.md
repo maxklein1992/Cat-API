@@ -17,19 +17,29 @@ The Cat API returns a JSON string with the information of one random entry in th
 ````
 In order to view the image, you need to copy the URL part of the string and paste it in your address bar. 
 
+![image](https://user-images.githubusercontent.com/19752148/186999757-ed258842-f8ed-46a5-9e21-1018c1a71367.png)
+
 You can also make your request more specific by putting a ? to the end of URL with one or more parameters. For example to return a Russian Blue (rblu) cat:
 
 ````
 https://api.thecatapi.com/v1/images/search?breed_ids=rblu
 ````
 
-# Any Questions:
-- **Email**: mcklein1992@gmail.com
+# Stack
 
-## Stack
+The stacks of this app are as follows:
 
 - **Angular.js** - Structural framework for dynamic web applications.
 - **Typescript** - Superset of JavaScript which provides optional static typing, classes and interfaces.
+- **Jest** - Javascript testing framework
+- **React Testing Library** - React DOM testing utilities that encourage good testing practices.
+
+# Any Questions:
+- **Email**: mcklein1992@gmail.com
+
+
+
+
 
 ## Development server
 
