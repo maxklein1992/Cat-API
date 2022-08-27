@@ -80,7 +80,7 @@ The stacks of this app are as follows:
 - **Typescript** - Superset of JavaScript which provides optional static typing, classes and interfaces.
 - **Jest** - Javascript testing framework
 - **React Testing Library** - React DOM testing utilities that encourage good testing practices.
-- **TsDoc** - An open source API documentation generator for Typescript.
+- **TypeDoc** - A documentation generator for Typescript projects.
 
 ## Any Questions:
 
