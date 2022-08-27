@@ -1,14 +1,16 @@
 <div class="random-cat-container">
-  <h1 class="header loading-text" *ngIf="!isLoaded">{{ TEXTS.CAT_LOADING }}</h1>
-  <div *ngIf="isLoaded">
-    <h1 class="header">{{ TEXTS.GET_RANDOM_CAT }}</h1>
+  <h1 class="header loading-text" *ngIf="!isLoaded">
+    {{ "randomCat.catLoading" | translate }}
+  </h1>
+  <div *ngIf="isLoaded" class="content-container">
+    <h1 class="header">{{ "randomCat.getRandomCat" | translate }}</h1>
     <div class="image-container">
       <cat-image-app [src]="image" [alt]="cat.id"></cat-image-app>
       <div class="button-container">
         <button-app
           (click)="requestData()"
           class="button button--primaryGreen"
-          title="{{ TEXTS.REFRESH }}"
+          title="{{ 'randomCat.refresh' | translate }}"
         ></button-app>
       </div>
     </div>

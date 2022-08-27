@@ -79,7 +79,7 @@
 .content-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start !important;
   width: 100%;
   margin-bottom: pxToRem(32);
 

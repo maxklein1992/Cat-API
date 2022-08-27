@@ -3,7 +3,7 @@
 @import "../../../styles/variables";
 
 .nav {
-  height: pxToRem(50);
+  height: pxToRem(60);
   width: 100%;
   background-color: $colorPrimaryBlack;
   position: relative;
@@ -27,6 +27,17 @@
   @include mediaQuery(m, up) {
     margin-left: pxToRem(64);
   }
+}
+
+select {
+  margin-left: pxToRem(16);
+  padding: pxToRem(6);
+  background-color: $colorPrimaryBlack;
+  border: none;
+  color: $colorPrimaryWhite;
+  font-weight: bold;
+  font-family: $fontFamilyBody;
+  border: pxToRem(1) solid $colorPrimaryWhite;
 }
 
 .hamburger {

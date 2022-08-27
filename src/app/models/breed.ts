@@ -32,3 +32,10 @@ export interface Breed {
    */
   wikipedia_url: string;
 }
+
+export interface BreedName {
+  /**
+   * Name of breed
+   */
+  name: string;
+}

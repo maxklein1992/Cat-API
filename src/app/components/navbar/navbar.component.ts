@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NAV_BAR } from 'src/app/constants/constants';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'navbar-app',
@@ -7,5 +7,28 @@ import { NAV_BAR } from 'src/app/constants/constants';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  TEXTS = { ...NAV_BAR };
+  currentLanguage: string;
+
+  languages = [
+    { code: 'en', name: 'English' },
+    { code: 'nl', name: 'Dutch' },
+  ];
+
+  constructor(private translate: TranslateService) {
+    this.ngOnInit();
+  }
+
+  ngOnInit(): void {
+    this.currentLanguage = this.translate.currentLang;
+  }
+
+  changeLanguage(language: string): void {
+    localStorage.setItem('language', language);
+    this.currentLanguage = language;
+    this.translate.use(language);
+  }
+
+  countryFlag(flag: string): string {
+    return `https://countryflagsapi.com/png/${flag}`;
+  }
 }

@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import type { Breed } from '../models/breed';
+
+import type { Breed } from '../models';
 
 @Injectable()
 export class GetBreedNames {
@@ -11,7 +13,7 @@ export class GetBreedNames {
 
   headers = new HttpHeaders({
     'content-type': 'application/json',
-    'x-api-key': `6ee743d1-d3d9-4b7a-ae8d-3277890a690d`,
+    'x-api-key': `${environment.apiKey}`,
   });
 
   options = { headers: this.headers };
@@ -19,9 +21,9 @@ export class GetBreedNames {
   /**
    * Retrieve limited breed names (to not spam the API)
    */
-  getBreedNames(): Observable<any[]> {
+  getBreedNames(): Observable<Breed[]> {
     return this.http.get<Breed[]>(
-      `https://api.thecatapi.com/v1/breeds?limit=${this.LIMIT}&page=0`,
+      `${environment.apiUrl}/breeds?limit=${this.LIMIT}&page=0`,
       this.options
     );
   }

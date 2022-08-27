@@ -1,0 +1,34 @@
+{
+  "navbar": {
+    "favorites": "Favorites",
+    "getRandomCat": "Get a random cat",
+    "catApiApp": "CatApi App",
+    "searchByBreed": "Search by breed"
+  },
+  "breedOverview": {
+    "addedFavorites": "Added to favorites",
+    "alreadyAdded": "Already added",
+    "description": "Description:",
+    "addFavorites": "Add to favorites",
+    "lifespan": "Lifespan:",
+    "noResultsFound": "No results found. Please try again",
+    "origin": "Origin:",
+    "searchByBreed": "Search by Breed",
+    "temperament": "Temperament:",
+    "showBreedNames": "Show examples of breed names",
+    "readMore": "Read more on",
+    "wikipedia": "Wikipedia",
+    "exampleCheetoh": "For example Cheetoh"
+  },
+  "randomCat": {
+    "catLoading": "Cat loading...",
+    "getRandomCat": "Get a random cat",
+    "refresh": "Refresh"
+  },
+  "favorites": {
+    "favorites": "Favorites",
+    "delete": "Delete",
+    "noFavorites": "No favorites",
+    "deletedCat": "Deleted cat"
+  }
+}

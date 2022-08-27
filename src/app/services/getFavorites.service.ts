@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import type { Breed } from '../models/breed';
+
+import type { Favorite } from '../models';
 
 @Injectable()
 export class GetFavorites {
@@ -9,7 +11,7 @@ export class GetFavorites {
 
   headers = new HttpHeaders({
     'content-type': 'application/json',
-    'x-api-key': `6ee743d1-d3d9-4b7a-ae8d-3277890a690d`,
+    'x-api-key': `${environment.apiKey}`,
   });
 
   options = { headers: this.headers };
@@ -17,9 +19,9 @@ export class GetFavorites {
   /**
    * Retrieve all favorite breeds
    */
-  getFavorites(): Observable<any> {
-    return this.http.get<Breed[]>(
-      `https://api.thecatapi.com/v1/favourites`,
+  getFavorites(): Observable<Favorite[]> {
+    return this.http.get<Favorite[]>(
+      `${environment.apiUrl}/favourites`,
       this.options
     );
   }

@@ -1,10 +1,10 @@
 <toast-app
   *ngIf="showToast"
-  text="{{ TEXTS.ADDED_CAT }}"
+  text="{{ 'breedOverview.addedFavorites' | translate }}"
   (closeToast)="showToast = false"
 ></toast-app>
 <div class="breed-overview-container">
-  <h1 class="header">{{ TEXTS.SEARCH_BY_BREED }}</h1>
+  <h1 class="header">{{ "breedOverview.searchByBreed" | translate }}</h1>
   <div class="search-container">
     <div class="search-container-top">
       <input
@@ -13,27 +13,26 @@
         name="catBreedName"
         (keyup.enter)="searchBreed()"
         [(ngModel)]="catBreedName"
-        placeholder="For example Cheetoh"
+        placeholder="{{ 'breedOverview.exampleCheetoh' | translate }}"
       />
       <button-app
         (click)="searchBreed()"
         class="button button--primaryGreen"
-        title="{{ TEXTS.SEARCH_BY_BREED }}"
-        [disabled]="!catBreedName"
+        title="{{ 'breedOverview.searchByBreed' | translate }}"
       ></button-app>
     </div>
     <button-app
       (click)="getBreedNames()"
       class="button button--primaryGreen"
-      title="{{ TEXTS.SHOW_BREEDNAMES }}"
+      title="{{ 'breedOverview.showBreedNames' | translate }}"
     ></button-app>
   </div>
   <div *ngIf="showError">
-    <h1 class="header">{{ TEXTS.ALREADY_ADDED }}</h1>
+    <h1 class="header">{{ "breedOverview.alreadyAdded" | translate }}</h1>
   </div>
   <div class="results-container">
     <div *ngIf="showNoResults">
-      <h1 class="header">{{ TEXTS.NO_RESULTS_FOUND }}</h1>
+      <h1 class="header">{{ "breedOverview.noResultsFound" | translate }}</h1>
     </div>
     <div *ngIf="showBreeds">
       <div *ngFor="let breed of catBreedList">
@@ -49,36 +48,44 @@
             <div>
               <p class="description">
                 <b
-                  ><span class="isGreen">{{ TEXTS.DESCRIPTION }}</span></b
+                  ><span class="isGreen">{{
+                    "breedOverview.description" | translate
+                  }}</span></b
                 >
                 {{ breed.description }}
               </p>
               <p class="description">
                 <b
-                  ><span class="isGreen">{{ TEXTS.ORIGIN }}</span></b
+                  ><span class="isGreen">{{
+                    "breedOverview.origin" | translate
+                  }}</span></b
                 >
                 {{ breed.origin }}
               </p>
               <p class="description">
                 <b
-                  ><span class="isGreen">{{ TEXTS.LIFESPAN }}</span></b
+                  ><span class="isGreen">{{
+                    "breedOverview.lifespan" | translate
+                  }}</span></b
                 >
                 {{ breed.life_span }}
               </p>
               <p class="description">
                 <b
-                  ><span class="isGreen">{{ TEXTS.TEMPERAMENT }}</span></b
+                  ><span class="isGreen">{{
+                    "breedOverview.temperament" | translate
+                  }}</span></b
                 >
                 {{ breed.temperament }}
               </p>
               <p class="description">
-                Read more on
+                {{ "breedOverview.readMore" | translate }}
                 <b>
                   <a
                     class="isGreen"
                     [href]="breed.wikipedia_url"
                     target="_blank"
-                    >Wikipedia</a
+                    >{{ "breedOverview.wikipedia" | translate }}</a
                   ></b
                 >
               </p>
@@ -86,7 +93,7 @@
             <button-app
               (click)="postFavorite(breed.reference_image_id)"
               class="button button--primaryWhite"
-              title="{{ TEXTS.FAVORITE }}"
+              title="{{ 'breedOverview.addFavorites' | translate }}"
             ></button-app>
           </div>
         </div>

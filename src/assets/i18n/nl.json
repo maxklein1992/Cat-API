@@ -1,0 +1,34 @@
+{
+  "navbar": {
+    "favorites": "Favorieten",
+    "getRandomCat": "Spawn een random kat",
+    "catApiApp": "CatApi App",
+    "searchByBreed": "Zoek op Ras"
+  },
+  "breedOverview": {
+    "addedFavorites": "Toegevoegd aan de favorieten",
+    "alreadyAdded": "Is al toegevoegd",
+    "description": "Beschrijving:",
+    "addFavorites": "Voeg toe aan de favorieten",
+    "lifespan": "Levensverwachting:",
+    "noResultsFound": "Geen resultaten gevonden. Probeer het opnieuw",
+    "origin": "Oorsprong:",
+    "searchByBreed": "Zoek op Ras",
+    "temperament": "Temperament:",
+    "showBreedNames": "Laat voorbeelden van ras namen zien",
+    "readMore": "Lees meer op",
+    "wikipedia": "Wikipedia",
+    "exampleCheetoh": "Bijvoorbeeld Cheetoh"
+  },
+  "randomCat": {
+    "catLoading": "De kat is aan het laden...",
+    "getRandomCat": "Spawn een random kat",
+    "refresh": "Refresh"
+  },
+  "favorites": {
+    "favorites": "Favorieten",
+    "delete": "Verwijder",
+    "noFavorites": "Geen favorieten",
+    "deletedCat": "Kat is verwijderd"
+  }
+}

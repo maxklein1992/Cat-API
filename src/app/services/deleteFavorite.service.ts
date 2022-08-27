@@ -1,8 +1,10 @@
-import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import type { Breed } from '../models/breed';
+
+import type { Breed, Favorite } from '../models';
 
 @Injectable()
 export class DeleteFavorite {
@@ -14,7 +16,7 @@ export class DeleteFavorite {
 
   headers = new HttpHeaders({
     'content-type': 'application/json',
-    'x-api-key': `6ee743d1-d3d9-4b7a-ae8d-3277890a690d`,
+    'x-api-key': `${environment.apiKey}`,
   });
 
   options = { headers: this.headers };
@@ -22,9 +24,9 @@ export class DeleteFavorite {
   /**
    * Delete favorite breed
    */
-  deleteFavorite(favoriteId: number): Observable<any> {
-    return this.http.delete<Breed>(
-      `https://api.thecatapi.com/v1/favourites/${favoriteId}?sub_id=${this.sub_id}`,
+  deleteFavorite(favoriteId: Favorite['id']) {
+    return this.http.delete(
+      `${environment.apiUrl}/favourites/${favoriteId}?sub_id=${this.sub_id}`,
       this.options
     );
   }

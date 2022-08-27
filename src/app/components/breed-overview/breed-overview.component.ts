@@ -1,9 +1,10 @@
-import { BREED_OVERVIEW } from 'src/app/constants/constants';
 import { Component, ViewEncapsulation } from '@angular/core';
-import { PostFavorite } from 'src/app/services/postFavorite.service';
-import { SearchBreedByName } from '../../services/searchBreedByName.service';
-import type { Breed } from 'src/app/models/breed';
-import { GetBreedNames } from 'src/app/services/getBreedNames.service';
+import {
+  PostFavorite,
+  GetBreedNames,
+  SearchBreedByName,
+} from 'src/app/services';
+import type { Breed, FavoriteImage } from 'src/app/models';
 
 @Component({
   selector: 'breed-overview-app',
@@ -14,19 +15,20 @@ import { GetBreedNames } from 'src/app/services/getBreedNames.service';
 export class BreedOverviewComponent {
   catBreedName: Breed['name'];
   catBreedList: Breed[];
-  catBreedNames: any;
+
+  catBreedNames: Breed[];
+
   showNoResults: boolean;
   showBreeds: boolean;
   showBreedNames: boolean;
-  showToast: boolean;
   showError: boolean;
+  showToast: boolean;
+
   toastMessage: string;
-  userId: string;
 
   IMAGE_URL = 'https://cdn2.thecatapi.com/images/';
   IMAGE_EXTENSION = '.jpg';
   LIMIT = 6;
-  TEXTS = { ...BREED_OVERVIEW };
 
   constructor(
     private getBreedNamesService: GetBreedNames,
@@ -38,10 +40,9 @@ export class BreedOverviewComponent {
     this.showBreedNames = false;
     this.showToast = false;
     this.showError = false;
-    this.userId = 'userDummy';
   }
 
-  postFavorite(imageId: string) {
+  postFavorite(imageId: FavoriteImage['id']) {
     this.postFavoriteService.postFavorite(imageId).subscribe(
       () => {
         this.showToast = true;
@@ -51,15 +52,13 @@ export class BreedOverviewComponent {
   }
 
   getBreedNames() {
-    this.getBreedNamesService
-      .getBreedNames()
-      .subscribe((breedNames: Breed[]) => {
-        this.showError = false;
-        this.showNoResults = false;
-        this.showBreeds = false;
-        this.showBreedNames = true;
-        this.catBreedNames = breedNames;
-      });
+    this.getBreedNamesService.getBreedNames().subscribe((breeds: Breed[]) => {
+      this.showError = false;
+      this.showNoResults = false;
+      this.showBreeds = false;
+      this.showBreedNames = true;
+      this.catBreedNames = breeds;
+    });
   }
 
   searchBreed() {
@@ -82,7 +81,7 @@ export class BreedOverviewComponent {
       });
   }
 
-  private pushResultsToList(res: any[]) {
+  private pushResultsToList(res: Breed[]) {
     let limitedResults = res.slice(0, this.LIMIT);
 
     // For not spamming the API unnecessary

@@ -1,7 +1,10 @@
-import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
+import { FavoriteImage } from '../models/favorite';
 
 @Injectable()
 export class PostFavorite {
@@ -9,7 +12,7 @@ export class PostFavorite {
 
   headers = new HttpHeaders({
     'content-type': 'application/json',
-    'x-api-key': `6ee743d1-d3d9-4b7a-ae8d-3277890a690d`,
+    'x-api-key': `${environment.apiKey}`,
   });
 
   options = { headers: this.headers };
@@ -17,9 +20,9 @@ export class PostFavorite {
   /**
    * Post favorite breed
    */
-  postFavorite(imageId: string): Observable<any> {
-    return this.http.post<any>(
-      `https://api.thecatapi.com/v1/favourites`,
+  postFavorite(imageId: FavoriteImage['id']): Observable<FavoriteImage['id']> {
+    return this.http.post<FavoriteImage['id']>(
+      `${environment.apiUrl}/favourites`,
       {
         image_id: imageId,
         sub_id: 'user123',

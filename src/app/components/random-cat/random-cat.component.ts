@@ -1,7 +1,6 @@
-import { BUTTONS, RANDOM_CAT } from 'src/app/constants/constants';
 import { Component, ViewEncapsulation } from '@angular/core';
-import { GetRandomCat } from '../../services/getRandomCat.service';
-import type { Cat } from '../../models/cat';
+import { GetRandomCat } from '../../services';
+import type { Cat } from '../../models';
 
 @Component({
   selector: 'random-cat-app',
@@ -20,16 +19,14 @@ export class RandomCatComponent {
     this.user = 'userDummy';
   }
 
-  TEXTS = { ...RANDOM_CAT, ...BUTTONS };
-
   ngOnInit(): void {
     this.requestData();
   }
 
   requestData() {
-    this.getRandomCat.getRandomCat().subscribe((cat: Cat[]) => {
-      this.cat = cat[0];
-      this.image = cat[0].url;
+    this.getRandomCat.getRandomCat().subscribe((cat: Cat) => {
+      this.cat = cat;
+      this.image = cat.url;
       this.isLoaded = true;
     });
   }

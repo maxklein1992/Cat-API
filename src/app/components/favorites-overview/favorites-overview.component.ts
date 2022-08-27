@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { DeleteFavorite } from 'src/app/services/deleteFavorite.service';
-import { FAVORITES_OVERVIEW } from 'src/app/constants/constants';
-import { GetFavorites } from 'src/app/services/getFavorites.service';
+import { DeleteFavorite, GetFavorites } from 'src/app/services';
+import type { Favorite } from 'src/app/models';
 
 @Component({
   selector: 'favorites-overview-app',
@@ -9,9 +8,8 @@ import { GetFavorites } from 'src/app/services/getFavorites.service';
   styleUrls: ['./favorites-overview.component.scss'],
 })
 export class FavoritesOverviewComponent {
-  favoriteList: any = [];
+  favoriteList: Favorite[];
   showToast: boolean;
-  favoriteItems: any;
 
   constructor(
     private getFavoritesService: GetFavorites,
@@ -20,15 +18,15 @@ export class FavoritesOverviewComponent {
     this.showToast = false;
   }
 
-  TEXTS = { ...FAVORITES_OVERVIEW };
-
   getFavorites() {
-    this.getFavoritesService.getFavorites().subscribe((favorites) => {
-      this.favoriteList = favorites;
-    });
+    this.getFavoritesService
+      .getFavorites()
+      .subscribe((favorites: Favorite[]) => {
+        this.favoriteList = favorites;
+      });
   }
 
-  deleteFavorite(favoriteId: number) {
+  deleteFavorite(favoriteId: Favorite['id']) {
     this.deleteFavoriteService.deleteFavorite(favoriteId).subscribe(() => {
       this.getFavorites();
       this.showToast = true;

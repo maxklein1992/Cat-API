@@ -1,10 +1,10 @@
 <toast-app
   *ngIf="showToast"
-  text="{{ TEXTS.DELETED_CAT }}"
+  text="{{ 'favorites.deletedCat' | translate }}"
   (closeToast)="showToast = false"
 ></toast-app>
 <div class="breed-overview-container">
-  <h1 class="isWhite">Favorites</h1>
+  <h1 class="isWhite">{{ "favorites.favorites" | translate }}</h1>
   <div class="grid">
     <div *ngFor="let favorite of favoriteList" class="column">
       <cat-image-app
@@ -15,10 +15,12 @@
         <button-app
           (click)="deleteFavorite(favorite.id)"
           class="button button--primaryGreen"
-          title="Delete"
+          title="{{ 'favorites.delete' | translate }}"
         ></button-app>
       </div>
     </div>
   </div>
-  <h3 class="isWhite" *ngIf="favoriteList?.length == 0">No favorites</h3>
+  <h3 class="isWhite" *ngIf="favoriteList?.length == 0">
+    {{ "favorites.noFavorites" | translate }}
+  </h3>
 </div>
