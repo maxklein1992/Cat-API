@@ -4,7 +4,7 @@ import {
   GetBreedNames,
   SearchBreedByName,
 } from 'src/app/services';
-import type { Breed, FavoriteImage } from 'src/app/models';
+import type { Breed, BreedName, FavoriteImage } from 'src/app/models';
 
 @Component({
   selector: 'breed-overview-app',
@@ -16,7 +16,7 @@ export class BreedOverviewComponent {
   catBreedName: Breed['name'];
   catBreedList: Breed[];
 
-  catBreedNames: Breed[];
+  catBreedNames: BreedName[];
 
   showNoResults: boolean;
   showBreeds: boolean;
@@ -28,7 +28,6 @@ export class BreedOverviewComponent {
 
   IMAGE_URL = 'https://cdn2.thecatapi.com/images/';
   IMAGE_EXTENSION = '.jpg';
-  LIMIT = 6;
 
   constructor(
     private getBreedNamesService: GetBreedNames,
@@ -53,11 +52,19 @@ export class BreedOverviewComponent {
 
   getBreedNames() {
     this.getBreedNamesService.getBreedNames().subscribe((breeds: Breed[]) => {
+      this.catBreedNames = [];
       this.showError = false;
       this.showNoResults = false;
       this.showBreeds = false;
       this.showBreedNames = true;
-      this.catBreedNames = breeds;
+
+      // Isolate the breed names and push them into the 'catBreedNames' array
+      breeds.forEach((breed) => {
+        const breedName: BreedName = {
+          name: breed.name,
+        };
+        this.catBreedNames.push(breedName);
+      });
     });
   }
 
@@ -82,10 +89,8 @@ export class BreedOverviewComponent {
   }
 
   private pushResultsToList(res: Breed[]) {
-    let limitedResults = res.slice(0, this.LIMIT);
-
-    // For not spamming the API unnecessary
-    limitedResults.forEach((item) => {
+    // For not spamming the API unnecessary, push only the properties that we will use in the 'catBreedList' array
+    res.forEach((item) => {
       const catBreed: Breed = {
         name: item.name,
         description: item.description,

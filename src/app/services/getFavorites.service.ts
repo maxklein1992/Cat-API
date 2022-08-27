@@ -11,7 +11,7 @@ export class GetFavorites {
 
   headers = new HttpHeaders({
     'content-type': 'application/json',
-    'x-api-key': `${environment.apiKey}`,
+    'x-api-key': `${environment.catApiKey}`,
   });
 
   options = { headers: this.headers };

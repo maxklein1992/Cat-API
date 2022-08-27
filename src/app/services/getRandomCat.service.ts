@@ -12,7 +12,7 @@ export class GetRandomCat {
   /**
    * Retrieve random image of cat
    */
-  getRandomCat(): Observable<Cat> {
-    return this.http.get<Cat>(`${environment.apiUrl}/images/search`);
+  getRandomCat(): Observable<Cat[]> {
+    return this.http.get<Cat[]>(`${environment.apiUrl}/images/search`);
   }
 }

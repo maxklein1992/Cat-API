@@ -27,8 +27,4 @@ export class NavbarComponent {
     this.currentLanguage = language;
     this.translate.use(language);
   }
-
-  countryFlag(flag: string): string {
-    return `https://countryflagsapi.com/png/${flag}`;
-  }
 }

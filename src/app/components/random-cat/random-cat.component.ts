@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+
 import { GetRandomCat } from '../../services';
 import type { Cat } from '../../models';
 
@@ -12,11 +13,9 @@ export class RandomCatComponent {
   cat: Cat;
   image: string;
   isLoaded: boolean;
-  user: string;
 
   constructor(private getRandomCat: GetRandomCat) {
     this.isLoaded = false;
-    this.user = 'userDummy';
   }
 
   ngOnInit(): void {
@@ -24,9 +23,9 @@ export class RandomCatComponent {
   }
 
   requestData() {
-    this.getRandomCat.getRandomCat().subscribe((cat: Cat) => {
-      this.cat = cat;
-      this.image = cat.url;
+    this.getRandomCat.getRandomCat().subscribe((cat: Cat[]) => {
+      this.cat = cat[0];
+      this.image = cat[0].url;
       this.isLoaded = true;
     });
   }

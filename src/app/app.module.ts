@@ -9,10 +9,13 @@ import { HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BreedOverviewComponent } from './components/breed-overview/breed-overview.component';
-import { ButtonComponent } from './UI/button/button.component';
-import { CatImageComponent } from './components/cat-image/cat-image.component';
-import { ContainerComponent } from './UI/container/container.component';
+import {
+  BreedOverviewComponent,
+  CatImageComponent,
+  FavoritesOverviewComponent,
+  NavbarComponent,
+  RandomCatComponent,
+} from './components';
 import {
   DeleteFavorite,
   GetBreedNames,
@@ -21,10 +24,7 @@ import {
   GetRandomCat,
   SearchBreedByName,
 } from './services';
-import { FavoritesOverviewComponent } from './components/favorites-overview/favorites-overview.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { RandomCatComponent } from './components/random-cat/random-cat.component';
-import { ToastComponent } from './components/toast/toast.component';
+import { ButtonComponent, ContainerComponent, ToastComponent } from './UI';
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {

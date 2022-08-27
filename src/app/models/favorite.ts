@@ -1,6 +1,6 @@
 export interface Favorite {
   /**
-   * Date when it is created
+   * Date when favorite is created
    */
   created_at: string;
   /**

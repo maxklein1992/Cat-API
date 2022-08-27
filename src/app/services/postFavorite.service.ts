@@ -12,7 +12,7 @@ export class PostFavorite {
 
   headers = new HttpHeaders({
     'content-type': 'application/json',
-    'x-api-key': `${environment.apiKey}`,
+    'x-api-key': `${environment.catApiKey}`,
   });
 
   options = { headers: this.headers };
@@ -20,12 +20,12 @@ export class PostFavorite {
   /**
    * Post favorite breed
    */
-  postFavorite(imageId: FavoriteImage['id']): Observable<FavoriteImage['id']> {
-    return this.http.post<FavoriteImage['id']>(
+  postFavorite(imageId: FavoriteImage['id']) {
+    return this.http.post(
       `${environment.apiUrl}/favourites`,
       {
         image_id: imageId,
-        sub_id: 'user123',
+        sub_id: environment.sub_id,
       },
       this.options
     );
