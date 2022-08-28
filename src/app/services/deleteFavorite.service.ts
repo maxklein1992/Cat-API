@@ -17,7 +17,7 @@ export class DeleteFavorite {
   options = { headers: this.headers };
 
   /**
-   * Delete favorite breed from favorites database of Cat Api
+   * Delete favorite breed from favorites database of Cat Api from your account
    *
    * @param favoriteId the id of the favorite breed
    */

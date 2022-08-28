@@ -54,7 +54,8 @@ export class BreedOverviewComponent {
   }
 
   /**
-   * Consumes the 'postFavorite' service to push a favorite breed into the favorites database
+   * Consumes the 'postFavorite' service to push a favorite breed into the list of favorites
+   * belonging to your account
    *
    * @param imageId the image id of the favorite breed
    */
@@ -88,7 +89,7 @@ export class BreedOverviewComponent {
   }
 
   /**
-   * Consumes the 'searchBreedByName' service to retrieve breeds by querying a breed name
+   * Consumes the 'searchBreedByName' service to retrieve breeds by querying (part of) a breed name
    */
   searchBreed() {
     this.catBreedList = [];

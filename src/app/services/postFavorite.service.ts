@@ -4,7 +4,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { FavoriteImage } from '../models/favorite';
+import { Favorite, FavoriteImage } from '../models/favorite';
 
 @Injectable()
 export class PostFavorite {
@@ -21,10 +21,10 @@ export class PostFavorite {
    * Posts favorite breed to favorites database of Cat Api
    *
    * @param imageId the image id of the favorite breed
-   * @returns
+   * @returns unique id of the new created favorite
    */
-  postFavorite(imageId: FavoriteImage['id']) {
-    return this.http.post(
+  postFavorite(imageId: FavoriteImage['id']): Observable<Favorite['id']> {
+    return this.http.post<Favorite['id']>(
       `${environment.apiUrl}/favourites`,
       {
         image_id: imageId,

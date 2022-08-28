@@ -19,7 +19,7 @@ export class FavoritesOverviewComponent {
   }
 
   /**
-   * Consumes the 'getFavorites' service to retrieve all created favorite breeds
+   * Consumes the 'getFavorites' service to retrieve all created favorite breeds belonging to your account
    */
   getFavorites() {
     this.getFavoritesService
@@ -31,7 +31,7 @@ export class FavoritesOverviewComponent {
 
   /**
    * Consumes the 'deleteFavorite' service to remove a favorite breeds from the list of
-   * all favorite breeds
+   * all favorite breeds belonging to your account
    */
   deleteFavorite(favoriteId: Favorite['id']) {
     this.deleteFavoriteService.deleteFavorite(favoriteId).subscribe(() => {
