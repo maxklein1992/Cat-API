@@ -75,6 +75,10 @@ https://api.thecatapi.com/v1/favourites
 https://api.thecatapi.com/v1/favourites/${favouriteId}
 ```
 
+```
+https://api.thecatapi.com/v1/favourites/${favouriteId}
+```
+
 ## Getting started
 
 ### Prerequisites
