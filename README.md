@@ -74,7 +74,7 @@ Run `ng test` to execute the unit tests.
 
 ## Stack
 
-The stacks of this app are as follows:
+The stack of this app is as follows:
 
 - **Angular.js** - Structural framework for dynamic web applications.
 - **Typescript** - Superset of JavaScript which provides optional static typing, classes and interfaces.
