@@ -1,10 +1,10 @@
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Favorite, FavoriteImage } from '../models/favorite';
+import { environment } from '../../environments/environment';
+import type { Favorite, FavoriteImage } from '../models/favorite';
 
 @Injectable()
 export class PostFavorite {

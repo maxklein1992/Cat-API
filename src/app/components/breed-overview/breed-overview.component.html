@@ -14,17 +14,20 @@
         (keyup.enter)="searchBreed()"
         [(ngModel)]="catBreedName"
         placeholder="{{ 'breedOverview.exampleCheetoh' | translate }}"
+        data-testid="input"
       />
       <button-app
         (click)="searchBreed()"
         class="button button--primaryGreen"
         title="{{ 'breedOverview.searchByBreed' | translate }}"
+        data-testid="search-button"
       ></button-app>
     </div>
     <button-app
       (click)="getBreedNames()"
       class="button button--primaryGreen"
       title="{{ 'breedOverview.showBreedNames' | translate }}"
+      data-testid="examples-button"
     ></button-app>
   </div>
   <div *ngIf="showError">

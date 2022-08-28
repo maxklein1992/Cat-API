@@ -1,12 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { environment } from 'src/environments/environment';
-import {
-  PostFavorite,
-  GetBreedNames,
-  SearchBreedByName,
-} from 'src/app/services';
-import type { Breed, BreedName, FavoriteImage } from 'src/app/models';
+import { environment } from '../../../environments/environment';
+import { PostFavorite, GetBreedNames, SearchBreedByName } from '../../services';
+import type { Breed, BreedName, FavoriteImage } from '../../models';
 
 @Component({
   selector: 'breed-overview-app',

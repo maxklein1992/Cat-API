@@ -1,12 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { TranslateModule } from '@ngx-translate/core';
+
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components';
+import { ButtonComponent, ContainerComponent } from './UI';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent],
+      imports: [RouterTestingModule, TranslateModule.forRoot()],
+      declarations: [AppComponent, NavbarComponent, ContainerComponent],
     }).compileComponents();
   });
 
@@ -16,18 +20,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'cat-app'`, () => {
+  it(`should have as title 'Cat API App'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('cat-app');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'cat-app app is running!'
-    );
+    expect(app.title).toEqual('Cat API App');
   });
 });

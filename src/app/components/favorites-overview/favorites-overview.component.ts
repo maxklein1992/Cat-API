@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { DeleteFavorite, GetFavorites } from 'src/app/services';
-import type { Favorite } from 'src/app/models';
+
+import { DeleteFavorite, GetFavorites } from '../../services';
+import type { Favorite } from '../../models';
 
 @Component({
   selector: 'favorites-overview-app',
