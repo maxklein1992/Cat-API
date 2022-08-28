@@ -31,6 +31,9 @@ https://api.thecatapi.com/v1/images/search?breed_ids=rblu
 In this project we use the Cat Api in multiple ways:
 
 - To get a random image of a cat.
+```
+https://api.thecatapi.com/v1/images/search
+```
 - To search on bread names and get access to different kind of information about a breed.
 - To create favorite breeds.
 - To remove a breed from the favorite list.
