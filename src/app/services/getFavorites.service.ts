@@ -17,7 +17,7 @@ export class GetFavorites {
   options = { headers: this.headers };
 
   /**
-   * Retrieve all created favorites from favorites database of Cat Api
+   * Retrieve all created favorites belonging to your account from favorites database of Cat Api
    *
    * @returns request URL of created favorites
    */

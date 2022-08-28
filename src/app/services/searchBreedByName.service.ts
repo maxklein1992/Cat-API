@@ -12,7 +12,7 @@ export class SearchBreedByName {
   constructor(private http: HttpClient) {}
 
   /**
-   * Retrieves breeds from breeds database of Cat Api by using (part of) the breed name as 'q' query parameter
+   * Search for a breed from the breeds database of Cat Api by using (part of) the breed name as 'q' query parameter
    *
    * @param breedName the name of the breed
    * @returns breeds

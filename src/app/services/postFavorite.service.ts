@@ -18,7 +18,8 @@ export class PostFavorite {
   options = { headers: this.headers };
 
   /**
-   * Posts favorite breed to favorites database of Cat Api
+   * Posts favorite breed to favorites database of Cat Api, of your account
+   * This can be done by sending the 'image_id' and the 'sub_id' in the body
    *
    * @param imageId the image id of the favorite breed
    * @returns unique id of the new created favorite
