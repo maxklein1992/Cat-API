@@ -81,6 +81,7 @@ The stacks of this app are as follows:
 - **Jest** - Javascript testing framework
 - **React Testing Library** - React DOM testing utilities that encourage good testing practices.
 - **TypeDoc** - A documentation generator for Typescript projects.
+- **Ngx Translate** - The internationalization (i18n) library for Angular projects.
 
 ## Any Questions:
 
