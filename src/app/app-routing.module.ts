@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BreedOverviewComponent } from './components/breed-overview/breed-overview.component';
-import { FavoritesOverviewComponent } from './components/favorites-overview/favorites-overview.component';
-import { RandomCatComponent } from './components/random-cat/random-cat.component';
+
+import {
+  BreedOverviewComponent,
+  FavoritesOverviewComponent,
+  RandomCatImageComponent,
+} from './components';
 
 const routes: Routes = [
   {
     path: 'cat',
-    component: RandomCatComponent,
+    component: RandomCatImageComponent,
   },
   {
     path: '',
-    component: RandomCatComponent,
+    component: RandomCatImageComponent,
     pathMatch: 'full',
   },
   {

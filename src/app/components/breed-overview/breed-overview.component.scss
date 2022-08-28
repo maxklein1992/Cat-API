@@ -2,6 +2,8 @@
 @import "../../../styles/pxToRem";
 @import "../../../styles/variables";
 
+// Container layout
+
 .breed-overview-container {
   display: flex;
   flex-direction: column;
@@ -9,20 +11,6 @@
   width: 100%;
   position: relative;
   justify-content: flex-start;
-}
-
-.header {
-  color: $colorPrimaryWhite;
-  font-family: $fontFamilyBody;
-}
-
-.description {
-  color: $colorPrimaryWhite;
-  font-family: $fontFamilyBody;
-
-  .isGreen {
-    color: $colorPrimaryGreen;
-  }
 }
 
 .search-container {
@@ -36,37 +24,37 @@
   @include mediaQuery(m, up) {
     margin-top: pxToRem(64);
   }
-}
 
-.search-container-top {
-  display: flex;
-  margin-bottom: pxToRem(14);
-  height: max-content;
-  align-items: center;
-  width: 100% !important;
+  .search-container-top {
+    display: flex;
+    margin-bottom: pxToRem(14);
+    height: max-content;
+    align-items: center;
+    width: 100% !important;
 
-  @include mediaQuery(m, up) {
-    margin-bottom: pxToRem(22);
+    @include mediaQuery(m, up) {
+      margin-bottom: pxToRem(22);
+    }
   }
-}
 
-.search-bar {
-  margin-right: pxToRem(32);
-  width: 100%;
-  max-width: pxToRem(244);
-  padding: pxToRem(8);
-  height: pxToRem(48);
-  font-size: pxToRem(12);
-  max-height: pxToRem(148);
-  box-sizing: border-box;
-  font-family: $fontFamilyBody;
-  outline: none;
-  background-color: $colorPrimaryWhite;
-  border: pxToRem(2) solid $colorPrimaryWhite;
+  .search-bar {
+    margin-right: pxToRem(32);
+    width: 100%;
+    max-width: pxToRem(244);
+    padding: pxToRem(8);
+    height: pxToRem(48);
+    font-size: pxToRem(12);
+    max-height: pxToRem(148);
+    box-sizing: border-box;
+    font-family: $fontFamilyBody;
+    outline: none;
+    background-color: $colorPrimaryWhite;
+    border: pxToRem(2) solid $colorPrimaryWhite;
 
-  @include mediaQuery(m, up) {
-    padding: pxToRem(12) pxToRem(20);
-    font-size: pxToRem(16);
+    @include mediaQuery(m, up) {
+      padding: pxToRem(12) pxToRem(20);
+      font-size: pxToRem(16);
+    }
   }
 }
 
@@ -74,21 +62,41 @@
   display: flex;
   position: relative;
   margin-top: pxToRem(64);
-}
 
-.content-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start !important;
-  width: 100%;
-  margin-bottom: pxToRem(32);
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    width: 100%;
+    margin-bottom: pxToRem(32);
 
-  @include mediaQuery(m, up) {
-    flex-direction: row;
-    column-gap: pxToRem(64);
-    margin-bottom: 0;
+    @include mediaQuery(m, up) {
+      flex-direction: row;
+      column-gap: pxToRem(64);
+      margin-bottom: 0;
+    }
+
+    .details-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .country-flag {
+        margin-top: pxToRem(16);
+        height: pxToRem(75);
+        width: pxToRem(100);
+
+        @include mediaQuery(m, up) {
+          height: pxToRem(150);
+          width: pxToRem(200);
+          margin-top: 0;
+        }
+      }
+    }
   }
 }
+
+// Grid layout
 
 .grid {
   display: grid;
@@ -109,6 +117,22 @@
   }
 }
 
+// Typography variants layout
+
+.header {
+  color: $colorPrimaryWhite;
+  font-family: $fontFamilyBody;
+}
+
+.description {
+  color: $colorPrimaryWhite;
+  font-family: $fontFamilyBody;
+
+  .isGreen {
+    color: $colorPrimaryGreen;
+  }
+}
+
 .name {
   font-size: pxToRem(16);
   color: $colorPrimaryWhite;
@@ -116,10 +140,4 @@
   @include mediaQuery(s, up) {
     font-size: pxToRem(22);
   }
-}
-
-.details-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }

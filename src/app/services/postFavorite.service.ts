@@ -18,7 +18,10 @@ export class PostFavorite {
   options = { headers: this.headers };
 
   /**
-   * Post favorite breed
+   * Posts favorite breed to favorites database of Cat Api
+   *
+   * @param imageId the image id of the favorite breed
+   * @returns
    */
   postFavorite(imageId: FavoriteImage['id']) {
     return this.http.post(

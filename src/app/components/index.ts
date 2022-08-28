@@ -2,4 +2,4 @@ export { BreedOverviewComponent } from './breed-overview/breed-overview.componen
 export { CatImageComponent } from './cat-image/cat-image.component';
 export { FavoritesOverviewComponent } from './favorites-overview/favorites-overview.component';
 export { NavbarComponent } from './navbar/navbar.component';
-export { RandomCatComponent } from './random-cat/random-cat.component';
+export { RandomCatImageComponent } from './random-cat-image/random-cat-image.component';

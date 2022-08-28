@@ -22,6 +22,9 @@ export class NavbarComponent {
     this.currentLanguage = this.translate.currentLang;
   }
 
+  /**
+   * Changes the language of the content of the app
+   */
   changeLanguage(language: string): void {
     localStorage.setItem('language', language);
     this.currentLanguage = language;

@@ -1,4 +1,4 @@
-export interface Cat {
+export interface CatImage {
   /**
    * Height
    */

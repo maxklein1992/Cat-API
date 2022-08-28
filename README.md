@@ -74,12 +74,14 @@ Run `ng test` to execute the unit tests.
 
 ## Stack
 
-The stacks of this app are as follows:
+The stack of this app is as follows:
 
 - **Angular.js** - Structural framework for dynamic web applications.
 - **Typescript** - Superset of JavaScript which provides optional static typing, classes and interfaces.
 - **Jest** - Javascript testing framework
 - **React Testing Library** - React DOM testing utilities that encourage good testing practices.
+- **TypeDoc** - A documentation generator for Typescript projects.
+- **Ngx Translate** - The internationalization (i18n) library for Angular projects.
 
 ## Any Questions:
 

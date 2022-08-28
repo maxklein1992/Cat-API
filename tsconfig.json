@@ -3,6 +3,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+    "skipLibCheck": true,
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strictPropertyInitialization": false,
@@ -26,5 +27,9 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+  },
+  "typedocOptions": {
+    "entryPoints": ["src/main.ts"],
+    "out": "docs"
   }
 }

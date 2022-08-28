@@ -12,7 +12,10 @@ export class SearchBreedByName {
   constructor(private http: HttpClient) {}
 
   /**
-   * Search breed by breed name
+   * Retrieves breeds from breeds database of Cat Api by specifying a breed name
+   *
+   * @param breedName the name of the breed
+   * @returns breeds
    */
   searchBreedByName(breedName: Breed['name']): Observable<Breed[]> {
     return this.http.get<Breed[]>(

@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+
+import { environment } from 'src/environments/environment';
 import {
   PostFavorite,
   GetBreedNames,
@@ -41,6 +43,21 @@ export class BreedOverviewComponent {
     this.showError = false;
   }
 
+  /**
+   * Retrieves a flag from the flags database of the Flag Api
+   *
+   * @param country_code Country code of the breed
+   * @returns request URL of the flag
+   */
+  countryUrl(country_code: Breed['country_code']): string {
+    return `${environment.flagUrl}${country_code}`;
+  }
+
+  /**
+   * Consumes the 'postFavorite' service to push a favorite breed into the favorites database
+   *
+   * @param imageId the image id of the favorite breed
+   */
   postFavorite(imageId: FavoriteImage['id']) {
     this.postFavoriteService.postFavorite(imageId).subscribe(
       () => {
@@ -50,6 +67,9 @@ export class BreedOverviewComponent {
     );
   }
 
+  /**
+   * Consumes the 'getBreedNames' service to retrieve breeds from the breeds database
+   */
   getBreedNames() {
     this.getBreedNamesService.getBreedNames().subscribe((breeds: Breed[]) => {
       this.catBreedNames = [];
@@ -58,7 +78,6 @@ export class BreedOverviewComponent {
       this.showBreeds = false;
       this.showBreedNames = true;
 
-      // Isolate the breed names and push them into the 'catBreedNames' array
       breeds.forEach((breed) => {
         const breedName: BreedName = {
           name: breed.name,
@@ -68,6 +87,9 @@ export class BreedOverviewComponent {
     });
   }
 
+  /**
+   * Consumes the 'searchBreedByName' service to retrieve breeds by querying a breed name
+   */
   searchBreed() {
     this.catBreedList = [];
     this.searchBreedService
@@ -89,13 +111,13 @@ export class BreedOverviewComponent {
   }
 
   private pushResultsToList(res: Breed[]) {
-    // For not spamming the API unnecessary, push only the properties that we will use in the 'catBreedList' array
     res.forEach((item) => {
       const catBreed: Breed = {
         name: item.name,
         description: item.description,
         life_span: item.life_span,
         origin: item.origin,
+        country_code: item.country_code,
         temperament: item.temperament,
         reference_image_id: item.reference_image_id,
         wikipedia_url: item.wikipedia_url,

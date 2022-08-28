@@ -7,8 +7,9 @@ export const environment = {
   apiUrl: 'https://api.thecatapi.com/v1',
   catApiKey: '6ee743d1-d3d9-4b7a-ae8d-3277890a690d',
   title: 'Cat API App',
-  sub_id: 'user123',
-
+  sub_id: 'user123', // Our user id
+  flagUrl: 'https://countryflagsapi.com/png/',
+};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

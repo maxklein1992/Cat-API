@@ -14,14 +14,14 @@ import {
   CatImageComponent,
   FavoritesOverviewComponent,
   NavbarComponent,
-  RandomCatComponent,
+  RandomCatImageComponent,
 } from './components';
 import {
   DeleteFavorite,
   GetBreedNames,
   GetFavorites,
   PostFavorite,
-  GetRandomCat,
+  GetRandomCatImage,
   SearchBreedByName,
 } from './services';
 import { ButtonComponent, ContainerComponent, ToastComponent } from './UI';
@@ -40,7 +40,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ContainerComponent,
     FavoritesOverviewComponent,
     NavbarComponent,
-    RandomCatComponent,
+    RandomCatImageComponent,
     ToastComponent,
   ],
   imports: [
@@ -61,7 +61,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     DeleteFavorite,
     GetBreedNames,
     GetFavorites,
-    GetRandomCat,
+    GetRandomCatImage,
     PostFavorite,
     SearchBreedByName,
   ],

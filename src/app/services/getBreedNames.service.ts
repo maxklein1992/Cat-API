@@ -11,6 +11,7 @@ export class GetBreedNames {
 
   constructor(private http: HttpClient) {}
 
+  // A valid API key is required in this service to query parameters
   headers = new HttpHeaders({
     'content-type': 'application/json',
     'x-api-key': `${environment.catApiKey}`,
@@ -19,7 +20,9 @@ export class GetBreedNames {
   options = { headers: this.headers };
 
   /**
-   * Retrieve limited breed names (to not spam the API)
+   * Get all breeds from breeds database of Cat Api (needed to get all breed names)
+   *
+   * @returns request URL of breeds
    */
   getBreedNames(): Observable<Breed[]> {
     return this.http.get<Breed[]>(

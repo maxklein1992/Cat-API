@@ -17,7 +17,9 @@ export class GetFavorites {
   options = { headers: this.headers };
 
   /**
-   * Retrieve all favorite breeds
+   * Retrieve all created favorites from favorites database of Cat Api
+   *
+   * @returns request URL of created favorites
    */
   getFavorites(): Observable<Favorite[]> {
     return this.http.get<Favorite[]>(

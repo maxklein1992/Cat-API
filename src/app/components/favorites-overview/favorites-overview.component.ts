@@ -18,6 +18,9 @@ export class FavoritesOverviewComponent {
     this.showToast = false;
   }
 
+  /**
+   * Consumes the 'getFavorites' service to retrieve all created favorite breeds
+   */
   getFavorites() {
     this.getFavoritesService
       .getFavorites()
@@ -26,8 +29,13 @@ export class FavoritesOverviewComponent {
       });
   }
 
+  /**
+   * Consumes the 'deleteFavorite' service to remove a favorite breeds from the list of
+   * all favorite breeds
+   */
   deleteFavorite(favoriteId: Favorite['id']) {
     this.deleteFavoriteService.deleteFavorite(favoriteId).subscribe(() => {
+      // retrieve again the created favorites to see the change
       this.getFavorites();
       this.showToast = true;
     });

@@ -36,9 +36,7 @@
     </div>
     <div *ngIf="showBreeds">
       <div *ngFor="let breed of catBreedList">
-        <div class="title-container">
-          <h1 class="description">{{ breed.name }}</h1>
-        </div>
+        <h1 class="description">{{ breed.name }}</h1>
         <div class="content-container">
           <cat-image-app
             [src]="breed.image_url"
@@ -46,6 +44,11 @@
           ></cat-image-app>
           <div class="details-container">
             <div>
+              <img
+                src="{{ countryUrl(breed.country_code) }}"
+                class="country-flag"
+                alt="breed.country_code"
+              />
               <p class="description">
                 <b
                   ><span class="isGreen">{{

@@ -1,6 +1,10 @@
 export interface Breed {
   /**
-   * Description
+   * Country code of breed
+   */
+  country_code: string;
+  /**
+   * Description about breed
    */
   description: string;
   /**
@@ -20,11 +24,11 @@ export interface Breed {
    */
   origin: string;
   /**
-   * Reference image id
+   * Reference image id of breed
    */
   reference_image_id: string;
   /**
-   * Temperament
+   * Temperament of breed
    */
   temperament: string;
   /**
