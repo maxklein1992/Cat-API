@@ -1,4 +1,4 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {
   async,
   ComponentFixture,
@@ -12,6 +12,7 @@ import {
 } from '@ngx-translate/core';
 import { screen } from '@testing-library/angular';
 import { TranslateTestingModule } from 'ngx-translate-testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ButtonComponent } from '../../../app/UI';
 import { HttpLoaderFactory } from '../../../app/app.module';
@@ -25,8 +26,9 @@ describe('RandomCatImageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [RandomCatImageComponent, ButtonComponent],
-      providers: [GetRandomCatImage, HttpClient, HttpHandler],
+      providers: [GetRandomCatImage],
       imports: [
+        HttpClientTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -55,4 +57,12 @@ describe('RandomCatImageComponent', () => {
       expect(header.textContent).toContain('De kat is aan het laden...');
     }
   ));
+
+  it("should consume 'getRandomCatImage' service at initialization", () => {
+    jest.spyOn(component, 'requestData');
+    expect(component.requestData).not.toHaveBeenCalled();
+
+    component.ngOnInit();
+    expect(component.requestData).toHaveBeenCalled();
+  });
 });

@@ -29,9 +29,6 @@ export class BreedOverviewComponent {
 
   toastMessage: string;
 
-  IMAGE_URL = 'https://cdn2.thecatapi.com/images/';
-  IMAGE_EXTENSION = '.jpg';
-
   constructor(
     private getCountryFlagService: getCountryFlag,
     private getBreedNamesService: GetBreedNames,
@@ -124,8 +121,7 @@ export class BreedOverviewComponent {
         temperament: item.temperament,
         reference_image_id: item.reference_image_id,
         wikipedia_url: item.wikipedia_url,
-        image_url:
-          this.IMAGE_URL + item.reference_image_id + this.IMAGE_EXTENSION,
+        image_url: environment.breedUrl + item.reference_image_id + '.jpg',
       };
 
       this.catBreedList.push(catBreed);

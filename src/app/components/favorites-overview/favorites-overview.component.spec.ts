@@ -1,4 +1,4 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import {
   async,
   ComponentFixture,
@@ -11,6 +11,7 @@ import {
   TranslateService,
 } from '@ngx-translate/core';
 import { TranslateTestingModule } from 'ngx-translate-testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ButtonComponent } from '../../../app/UI';
 import { HttpLoaderFactory } from '../../../app/app.module';
@@ -24,8 +25,9 @@ describe('FavoritesOverviewComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [FavoritesOverviewComponent, ButtonComponent],
-      providers: [GetFavorites, DeleteFavorite, HttpClient, HttpHandler],
+      providers: [GetFavorites, DeleteFavorite],
       imports: [
+        HttpClientTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -54,4 +56,12 @@ describe('FavoritesOverviewComponent', () => {
       expect(header.textContent).toEqual('Favorieten');
     }
   ));
+
+  it("should consume 'getFavorites' service at initialization", () => {
+    jest.spyOn(component, 'getFavorites');
+    expect(component.getFavorites).not.toHaveBeenCalled();
+
+    component.ngOnInit();
+    expect(component.getFavorites).toHaveBeenCalled();
+  });
 });
