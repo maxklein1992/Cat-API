@@ -1,5 +1,6 @@
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { By } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import {
   async,
   ComponentFixture,
@@ -40,6 +41,7 @@ describe('BreedOverviewComponent', () => {
         HttpHandler,
       ],
       imports: [
+        FormsModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
