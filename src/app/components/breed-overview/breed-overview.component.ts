@@ -1,7 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 import { environment } from '../../../environments/environment';
-import { PostFavorite, GetBreedNames, SearchBreedByName } from '../../services';
+import {
+  PostFavorite,
+  GetBreedNames,
+  SearchBreedByName,
+  getCountryFlag,
+} from '../../services';
 import type { Breed, BreedName, FavoriteImage } from '../../models';
 
 @Component({
@@ -28,6 +33,7 @@ export class BreedOverviewComponent {
   IMAGE_EXTENSION = '.jpg';
 
   constructor(
+    private getCountryFlagService: getCountryFlag,
     private getBreedNamesService: GetBreedNames,
     private searchBreedService: SearchBreedByName,
     private postFavoriteService: PostFavorite
@@ -45,8 +51,8 @@ export class BreedOverviewComponent {
    * @param country_code Country code of the breed
    * @returns request URL of the flag
    */
-  countryUrl(country_code: Breed['country_code']): string {
-    return `${environment.flagUrl}${country_code}`;
+  getCountryFlag(country_code: Breed['country_code']): string {
+    return this.getCountryFlagService.getCountryFlag(country_code);
   }
 
   /**

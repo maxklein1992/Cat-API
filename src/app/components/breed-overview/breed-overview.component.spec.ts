@@ -16,7 +16,12 @@ import { TranslateTestingModule } from 'ngx-translate-testing';
 
 import { ButtonComponent } from '../../../app/UI';
 import { HttpLoaderFactory } from '../../../app/app.module';
-import { GetBreedNames, PostFavorite, SearchBreedByName } from '../../services';
+import {
+  GetBreedNames,
+  getCountryFlag,
+  PostFavorite,
+  SearchBreedByName,
+} from '../../services';
 import { BreedOverviewComponent } from './breed-overview.component';
 
 describe('BreedOverviewComponent', () => {
@@ -27,6 +32,7 @@ describe('BreedOverviewComponent', () => {
     TestBed.configureTestingModule({
       declarations: [BreedOverviewComponent, ButtonComponent],
       providers: [
+        getCountryFlag,
         GetBreedNames,
         PostFavorite,
         SearchBreedByName,

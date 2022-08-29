@@ -23,6 +23,7 @@ import {
   PostFavorite,
   GetRandomCatImage,
   SearchBreedByName,
+  getCountryFlag,
 } from './services';
 import { ButtonComponent, ContainerComponent, ToastComponent } from './UI';
 
@@ -59,6 +60,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ],
   providers: [
     DeleteFavorite,
+    getCountryFlag,
     GetBreedNames,
     GetFavorites,
     GetRandomCatImage,

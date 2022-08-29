@@ -27,11 +27,15 @@
       </label>
     </div>
     <div class="nav-links">
-      <a [routerLink]="['/cat']">{{ "navbar.getRandomCat" | translate }}</a>
-      <a [routerLink]="['/filterByBreed']">{{
+      <a [routerLink]="['/cat']" role="menuitem">{{
+        "navbar.getRandomCat" | translate
+      }}</a>
+      <a [routerLink]="['/filterByBreed']" role="menuitem">{{
         "navbar.searchByBreed" | translate
       }}</a>
-      <a [routerLink]="['/favorites']">{{ "navbar.favorites" | translate }}</a>
+      <a [routerLink]="['/favorites']" role="menuitem">{{
+        "navbar.favorites" | translate
+      }}</a>
     </div>
   </nav>
 </header>

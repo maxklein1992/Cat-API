@@ -1,4 +1,5 @@
 export * from './deleteFavorite.service';
+export * from './getCountryFlag.service';
 export * from './getBreedNames.service';
 export * from './getFavorites.service';
 export * from './getRandomCatImage.service';
