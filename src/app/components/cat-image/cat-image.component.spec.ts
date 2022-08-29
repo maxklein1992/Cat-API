@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import { screen } from '@testing-library/angular';
 
 import { CatImageComponent } from './cat-image.component';
 

@@ -1,7 +1,4 @@
-import { EventEmitter } from '@angular/core';
-import { async, fakeAsync, TestBed, tick } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { screen } from '@testing-library/angular';
+import { TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
 

@@ -1,7 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { DeleteFavorite } from './deleteFavorite.service';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('DeleteFavoriteService', () => {
   let service: DeleteFavorite;

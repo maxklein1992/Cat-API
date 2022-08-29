@@ -1,10 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { GetBreedNames } from './getBreedNames.service';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
 
 describe('GetBreedNamesService', () => {
   let service: GetBreedNames;

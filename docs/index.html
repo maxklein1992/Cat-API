@@ -34,10 +34,40 @@
 </a>
 <p>In this project we use the Cat Api in multiple ways:</p>
 <ul>
-<li>You can get a random image of a cat.</li>
-<li>You can search on bread names and get access to much information about that breed.</li>
-<li>And you can make breeds your favorite and remove a breed from your favorite list.</li>
+<li>To get a random image of a cat.</li>
 </ul>
+<pre><code><span class="hl-0">https</span><span class="hl-1">:</span><span class="hl-2">//api.thecatapi.com/v1/images/search</span>
+</code></pre>
+<ul>
+<li>To get all breed names</li>
+</ul>
+<pre><code><span class="hl-0">https</span><span class="hl-1">:</span><span class="hl-2">//api.thecatapi.com/v1/breeds</span>
+</code></pre>
+<ul>
+<li>To search on breed names and get access to different kind of information about a breed.</li>
+</ul>
+<pre><code><span class="hl-0">https</span><span class="hl-1">:</span><span class="hl-2">//api.thecatapi.com/v1/breeds/search?q={breedName}</span>
+</code></pre>
+<ul>
+<li>To create favorite breeds.</li>
+</ul>
+<pre><code><span class="hl-0">https</span><span class="hl-1">:</span><span class="hl-2">//api.thecatapi.com/v1/favourites</span>
+</code></pre>
+<p>Passing</p>
+<pre><code><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-3">&quot;image_id&quot;</span><span class="hl-1">:</span><span class="hl-3">&quot;id of the image&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-3">&quot;sub_id&quot;</span><span class="hl-1">:</span><span class="hl-3">&quot;optional unique id of your user&quot;</span><br/><span class="hl-1">}</span>
+</code></pre>
+<ul>
+<li>To get all favorite breeds.</li>
+</ul>
+<pre><code><span class="hl-0">https</span><span class="hl-1">:</span><span class="hl-2">//api.thecatapi.com/v1/favourites</span>
+</code></pre>
+<ul>
+<li>To remove a breed from the favorite list.</li>
+</ul>
+<pre><code><span class="hl-0">https</span><span class="hl-1">:</span><span class="hl-2">//api.thecatapi.com/v1/favourites/${favouriteId}</span>
+</code></pre>
+<pre><code><span class="hl-0">https</span><span class="hl-1">:</span><span class="hl-2">//api.thecatapi.com/v1/favourites/${favouriteId}</span>
+</code></pre>
 
 <a href="#getting-started" id="getting-started" style="color: inherit; text-decoration: none;">
   <h2>Getting started</h2>
@@ -83,12 +113,13 @@
 <a href="#stack" id="stack" style="color: inherit; text-decoration: none;">
   <h2>Stack</h2>
 </a>
-<p>The stacks of this app are as follows:</p>
+<p>The stack of this app is as follows:</p>
 <ul>
 <li><strong>Angular.js</strong> - Structural framework for dynamic web applications.</li>
 <li><strong>Typescript</strong> - Superset of JavaScript which provides optional static typing, classes and interfaces.</li>
 <li><strong>Jest</strong> - Javascript testing framework</li>
-<li><strong>React Testing Library</strong> - React DOM testing utilities that encourage good testing practices.</li>
+<li><strong>TypeDoc</strong> - A documentation generator for Typescript projects.</li>
+<li><strong>Ngx Translate</strong> - The internationalization (i18n) library for Angular projects.</li>
 </ul>
 
 <a href="#any-questions" id="any-questions" style="color: inherit; text-decoration: none;">
@@ -120,32 +151,47 @@
 <li class="current selected"><a href="modules.html">cat-<wbr/>app</a>
 <ul>
 <li class="tsd-kind-module"><a href="modules/app_UI_button_button_component.html">app/UI/button/button.component</a></li>
+<li class="tsd-kind-module"><a href="modules/app_UI_button_button_component_spec.html">app/UI/button/button.component.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_UI_container_container_component.html">app/UI/container/container.component</a></li>
 <li class="tsd-kind-module"><a href="modules/app_UI_toast_toast_component.html">app/UI/toast/toast.component</a></li>
+<li class="tsd-kind-module"><a href="modules/app_UI_toast_toast_component_spec.html">app/UI/toast/toast.component.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_app_routing_module.html">app/app-<wbr/>routing.module</a></li>
 <li class="tsd-kind-module"><a href="modules/app_app_component.html">app/app.component</a></li>
 <li class="tsd-kind-module"><a href="modules/app_app_component_spec.html">app/app.component.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_app_module.html">app/app.module</a></li>
 <li class="tsd-kind-module"><a href="modules/app_components_breed_overview_breed_overview_component.html">app/components/breed-<wbr/>overview/breed-<wbr/>overview.component</a></li>
+<li class="tsd-kind-module"><a href="modules/app_components_breed_overview_breed_overview_component_spec.html">app/components/breed-<wbr/>overview/breed-<wbr/>overview.component.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_components_cat_image_cat_image_component.html">app/components/cat-<wbr/>image/cat-<wbr/>image.component</a></li>
+<li class="tsd-kind-module"><a href="modules/app_components_cat_image_cat_image_component_spec.html">app/components/cat-<wbr/>image/cat-<wbr/>image.component.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_components_favorites_overview_favorites_overview_component.html">app/components/favorites-<wbr/>overview/favorites-<wbr/>overview.component</a></li>
+<li class="tsd-kind-module"><a href="modules/app_components_favorites_overview_favorites_overview_component_spec.html">app/components/favorites-<wbr/>overview/favorites-<wbr/>overview.component.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_components_navbar_navbar_component.html">app/components/navbar/navbar.component</a></li>
+<li class="tsd-kind-module"><a href="modules/app_components_navbar_navbar_component_spec.html">app/components/navbar/navbar.component.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_components_random_cat_image_random_cat_image_component.html">app/components/random-<wbr/>cat-<wbr/>image/random-<wbr/>cat-<wbr/>image.component</a></li>
+<li class="tsd-kind-module"><a href="modules/app_components_random_cat_image_random_cat_image_component_spec.html">app/components/random-<wbr/>cat-<wbr/>image/random-<wbr/>cat-<wbr/>image.component.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_models_breed.html">app/models/breed</a></li>
 <li class="tsd-kind-module"><a href="modules/app_models_cat.html">app/models/cat</a></li>
 <li class="tsd-kind-module"><a href="modules/app_models_favorite.html">app/models/favorite</a></li>
 <li class="tsd-kind-module"><a href="modules/app_services_deleteFavorite_service.html">app/services/delete<wbr/>Favorite.service</a></li>
+<li class="tsd-kind-module"><a href="modules/app_services_deleteFavorite_service_spec.html">app/services/delete<wbr/>Favorite.service.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_services_getBreedNames_service.html">app/services/get<wbr/>Breed<wbr/>Names.service</a></li>
+<li class="tsd-kind-module"><a href="modules/app_services_getBreedNames_service_spec.html">app/services/get<wbr/>Breed<wbr/>Names.service.spec</a></li>
+<li class="tsd-kind-module"><a href="modules/app_services_getCountryFlag_service.html">app/services/get<wbr/>Country<wbr/>Flag.service</a></li>
+<li class="tsd-kind-module"><a href="modules/app_services_getCountryFlag_service_spec.html">app/services/get<wbr/>Country<wbr/>Flag.service.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_services_getFavorites_service.html">app/services/get<wbr/>Favorites.service</a></li>
+<li class="tsd-kind-module"><a href="modules/app_services_getFavorites_service_spec.html">app/services/get<wbr/>Favorites.service.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_services_getRandomCatImage_service.html">app/services/get<wbr/>Random<wbr/>Cat<wbr/>Image.service</a></li>
+<li class="tsd-kind-module"><a href="modules/app_services_getRandomCatImage_service_spec.html">app/services/get<wbr/>Random<wbr/>Cat<wbr/>Image.service.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_services_postFavorite_service.html">app/services/post<wbr/>Favorite.service</a></li>
+<li class="tsd-kind-module"><a href="modules/app_services_postFavorite_service_spec.html">app/services/post<wbr/>Favorite.service.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/app_services_searchBreedByName_service.html">app/services/search<wbr/>Breed<wbr/>By<wbr/>Name.service</a></li>
+<li class="tsd-kind-module"><a href="modules/app_services_searchBreedByNames_service_spec.html">app/services/search<wbr/>Breed<wbr/>By<wbr/>Names.service.spec</a></li>
 <li class="tsd-kind-module"><a href="modules/environments_environment.html">environments/environment</a></li>
 <li class="tsd-kind-module"><a href="modules/environments_environment_dev.html">environments/environment.dev</a></li>
 <li class="tsd-kind-module"><a href="modules/environments_environment_prod.html">environments/environment.prod</a></li>
 <li class="tsd-kind-module"><a href="modules/main.html">main</a></li>
 <li class="tsd-kind-module"><a href="modules/polyfills.html">polyfills</a></li>
-<li class="tsd-kind-module"><a href="modules/test.html">test</a></li></ul></li></ul></div></details></nav></div></div>
+<li class="tsd-kind-module"><a href="modules/setup_jest.html">setup.jest</a></li></ul></li></ul></div></details></nav></div></div>
 <div class="container tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
 <div class="overlay"></div><script src="assets/main.js"></script></body></html>

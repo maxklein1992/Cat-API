@@ -1,5 +1,5 @@
-import { TestBed } from '@angular/core/testing';
 import { screen } from '@testing-library/angular';
+import { TestBed } from '@angular/core/testing';
 
 import { ToastComponent } from './toast.component';
 

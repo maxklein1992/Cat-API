@@ -3,12 +3,15 @@ import {
   HttpClientModule,
   HttpHandler,
 } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 import {
   async,
   ComponentFixture,
   inject,
   TestBed,
 } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 import { screen } from '@testing-library/angular';
 import {
   TranslateLoader,
@@ -17,12 +20,9 @@ import {
 } from '@ngx-translate/core';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 
+import { AppRoutingModule } from '../../../app/app-routing.module';
 import { HttpLoaderFactory } from '../../../app/app.module';
 import { NavbarComponent } from './navbar.component';
-import { AppRoutingModule } from '../../../app/app-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;

@@ -15,6 +15,7 @@ import { screen } from '@testing-library/angular';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 
 import { ButtonComponent } from '../../../app/UI';
+import { BreedOverviewComponent } from './breed-overview.component';
 import { HttpLoaderFactory } from '../../../app/app.module';
 import {
   GetBreedNames,
@@ -22,7 +23,6 @@ import {
   PostFavorite,
   SearchBreedByName,
 } from '../../services';
-import { BreedOverviewComponent } from './breed-overview.component';
 
 describe('BreedOverviewComponent', () => {
   let component: BreedOverviewComponent;
@@ -81,6 +81,23 @@ describe('BreedOverviewComponent', () => {
       expect(examplesButton.nativeElement.textContent).toContain(
         'Laat voorbeelden van ras namen zien'
       );
+    }
+  ));
+
+  it('should render a header, an inputfield and two buttons', inject(
+    [TranslateService],
+    (translateService: TranslateService) => {
+      translateService.setDefaultLang('nl');
+      const fixture = TestBed.createComponent(BreedOverviewComponent);
+      fixture.detectChanges();
+
+      const buttons =
+        fixture.debugElement.nativeElement.querySelectorAll('button');
+
+      console.log(buttons);
+
+      const header = fixture.debugElement.nativeElement.querySelector('h1');
+      expect(header.textContent).toEqual('Zoek op Ras');
     }
   ));
 });

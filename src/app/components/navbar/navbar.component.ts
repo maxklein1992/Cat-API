@@ -23,7 +23,7 @@ export class NavbarComponent {
   }
 
   /**
-   * Changes the language of the content of the app
+   * Changes the language of the app
    */
   changeLanguage(language: string): void {
     localStorage.setItem('language', language);

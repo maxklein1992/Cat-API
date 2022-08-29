@@ -80,19 +80,19 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
+      .country-flag {
+        margin-top: pxToRem(16);
+        height: pxToRem(75);
+        width: pxToRem(100);
+
+        @include mediaQuery(m, up) {
+          height: pxToRem(150);
+          width: pxToRem(200);
+          margin-top: 0;
+        }
+      }
     }
-  }
-}
-
-.country-flag {
-  margin-top: pxToRem(16);
-  height: pxToRem(75);
-  width: pxToRem(100);
-
-  @include mediaQuery(m, up) {
-    height: pxToRem(150);
-    width: pxToRem(200);
-    margin-top: 0;
   }
 }
 
