@@ -18,6 +18,7 @@ export class RandomCatImageComponent {
     this.isLoaded = false;
   }
 
+  // get random cat image at initialization
   ngOnInit(): void {
     this.requestData();
   }

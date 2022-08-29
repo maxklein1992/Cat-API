@@ -110,6 +110,7 @@ export class BreedOverviewComponent {
       });
   }
 
+  // Filter to only variables we are going to use
   private pushResultsToList(res: Breed[]) {
     res.forEach((item) => {
       const catBreed: Breed = {

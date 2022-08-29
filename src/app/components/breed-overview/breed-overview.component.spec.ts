@@ -85,21 +85,4 @@ describe('BreedOverviewComponent', () => {
       );
     }
   ));
-
-  it('should render a header, an inputfield and two buttons', inject(
-    [TranslateService],
-    (translateService: TranslateService) => {
-      translateService.setDefaultLang('nl');
-      const fixture = TestBed.createComponent(BreedOverviewComponent);
-      fixture.detectChanges();
-
-      const buttons =
-        fixture.debugElement.nativeElement.querySelectorAll('button');
-
-      console.log(buttons);
-
-      const header = fixture.debugElement.nativeElement.querySelector('h1');
-      expect(header.textContent).toEqual('Zoek op Ras');
-    }
-  ));
 });

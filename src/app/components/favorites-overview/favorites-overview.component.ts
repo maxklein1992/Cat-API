@@ -42,6 +42,7 @@ export class FavoritesOverviewComponent {
     });
   }
 
+  // get favorite breeds at initialization
   ngOnInit(): void {
     this.getFavorites();
   }
